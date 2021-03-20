@@ -20,7 +20,7 @@ PetShop::~PetShop()
 	}
 }
 
-Pet& PetShop::Get() const
-{
-	return *this;
-}
+//Pet& PetShop::Get() const
+//{
+//	return *this;
+//}

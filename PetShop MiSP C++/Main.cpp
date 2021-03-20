@@ -10,7 +10,9 @@ int main()
 	Cat cat("Barsik", 3, "Yard");
 	Dog dog("Lord", 5, "Yard");
 
-	//MyPetShop.Put();
+	Pet* pointCat = new Cat("StarrrWars", 19, "Floppa");
+
+	MyPetShop.Put(pointCat);
 
 	cout << endl;
 	dog.Play();
@@ -18,4 +20,6 @@ int main()
 	cat.Play();
 	cout << endl;
 	cout << dog;
+	cout << endl;
+	cout << cat;
 }
