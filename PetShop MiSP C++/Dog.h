@@ -10,7 +10,7 @@ protected:
 
 public:
 
-	Dog(const string& name, uint age, const string& breed);
+	Dog(const string& name, uint age, const string& breed, const string& species);
 
 	void Play() const override;
 };

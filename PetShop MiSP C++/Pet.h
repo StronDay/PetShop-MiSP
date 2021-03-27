@@ -17,15 +17,18 @@ private:
 
 protected:
 
-	string _name;
 	uint _age;
+	string _name;
 	string _breed;
+	string _species;
 
 public:
 
-	Pet(const string& name, const string& breed, uint age);
-	virtual	string GetBreed() const;
+	Pet(const string& name, const string& breed, uint age, const string& species);
 	//virtual ~Pet();
+
+	virtual	string GetSpecies() const;
+	virtual void PrintPet();
 
 	virtual void Say() const = 0;
 	virtual void Play() const = 0;

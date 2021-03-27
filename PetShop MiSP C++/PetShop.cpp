@@ -20,7 +20,18 @@ PetShop::~PetShop()
 	}
 }
 
+void PetShop::CheckInfoShop()
+{
+	uint counter = 1;
+
+	for (int i = 0; i < _index; i++) {
+		
+		cout << "Pet Number: " << counter++ << endl;
+		cout << *_pets[i] << endl;
+	}
+}
+
 //Pet& PetShop::Get() const
 //{
-//	return *this;
+//	return ;
 //}

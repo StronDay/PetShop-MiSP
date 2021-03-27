@@ -7,19 +7,20 @@ int main()
 {
 
 	PetShop MyPetShop(2);
-	Cat cat("Barsik", 3, "Yard");
-	Dog dog("Lord", 5, "Yard");
+	Cat cat("Barsik", 3, "Yard", "cat");
+	Dog dog("Lord", 5, "Yard", "dog");
 
-	Pet* pointCat = new Cat("StarrrWars", 19, "Floppa");
+	MyPetShop.Put(&cat);
+	MyPetShop.Put(&dog);
 
-	MyPetShop.Put(pointCat);
+	MyPetShop.CheckInfoShop();
 
-	cout << endl;
+	/*cout << endl;
 	dog.Play();
 	cout << endl;
 	cat.Play();
 	cout << endl;
 	cout << dog;
 	cout << endl;
-	cout << cat;
+	cout << cat;*/
 }

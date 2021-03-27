@@ -22,5 +22,7 @@ public:
 	
 
 	void Put(Pet* pet);
-	//Pet& Get() const;
+	//Pet* Get() const;
+
+	void CheckInfoShop();
 };

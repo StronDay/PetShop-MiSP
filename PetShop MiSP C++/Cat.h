@@ -10,7 +10,7 @@ protected:
 
 public:
 
-	Cat(const string& name, uint age, const string& breed);
+	Cat(const string& name, uint age, const string& breed, const string& species);
 
 	void Play() const override;
 };
