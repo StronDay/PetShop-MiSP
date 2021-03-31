@@ -9,11 +9,11 @@ using namespace std;
 /* Заменяем тип unsigned int на unit */
 typedef unsigned int uint;
 
-class Pet 
+class Pet
 {
 private:
 
-	static const string _pet;
+	//static const string _pet;
 
 protected:
 
@@ -21,6 +21,8 @@ protected:
 	string _name;
 	string _breed;
 	string _species;
+
+	virtual void Say() const = 0;
 
 public:
 
@@ -30,7 +32,6 @@ public:
 	virtual	string GetSpecies() const;
 	virtual void PrintPet();
 
-	virtual void Say() const = 0;
 	virtual void Play() const = 0;
 
 	friend ostream& operator<<(ostream& os, const Pet& pet);
