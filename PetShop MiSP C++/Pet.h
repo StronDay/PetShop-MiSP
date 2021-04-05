@@ -11,10 +11,6 @@ typedef unsigned int uint;
 
 class Pet
 {
-private:
-
-	//static const string _pet;
-
 protected:
 
 	uint _age;
@@ -26,13 +22,16 @@ protected:
 
 public:
 
-	Pet(const string& name, const string& breed, uint age, const string& species);
-	//virtual ~Pet();
+	Pet(const string& name, const string& breed, uint age);
 
 	virtual	string GetSpecies() const;
 	virtual void PrintPet();
 
 	virtual void Play() const = 0;
 
+	Pet& operator= (const Pet& pet);
+
+	friend bool operator== (const Pet& pet1, const Pet& pet2);
+	friend bool operator!= (const Pet& pet1, const Pet& pet2);
 	friend ostream& operator<<(ostream& os, const Pet& pet);
 };

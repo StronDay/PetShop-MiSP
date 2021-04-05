@@ -2,45 +2,38 @@
 #include "Pet.h"
 #include "Cat.h"
 #include "Dog.h"
+#include <sstream>
 
 int main() 
 {
 
-	PetShop MyPetShop(10);
-	Cat cat("Barsik", 3, "Yard", "cat");
-	Dog dog("Lord", 5, "Yard", "dog");
-	Dog dog2("Charli", 2, "Yard", "dog");
+	PetShop MyPetShop("Zverinets", 10);
+	PetShop HimPetShop("Zverinets", 10);
+
+	Cat cat1("Barsik", 3, "Yard");
+	Dog dog1("Lord", 5, "Yard");
+	Cat cat2("Tom", 8, "Yard");
+	//Dog* dog2 = new Dog("Charli", 6, "Yard");
+
 	cout << endl;
 
-	MyPetShop.Put(&cat);
-	MyPetShop.Put(&dog);
+	MyPetShop.Put(&cat2);
+	MyPetShop.Put(&cat2);
+	MyPetShop.Put(&cat1);
+	//MyPetShop.Put(dog2);
 
-	MyPetShop.CheckInfoShop();
+	HimPetShop.Put(&cat2);
+	HimPetShop.Put(&cat2);
+	HimPetShop.Put(&cat1);
+	//HimPetShop.Put(dog2);
 
-	//cout << MyPetShop.Get() << endl << endl;
-
-	//MyPetShop.CheckInfoShop();
-	//cout << endl;
-
-	/*cout << "*****************" << endl;
-	cout << MyPetShop[0] << endl;
-
-	cout << "*****************" << endl;
-	cout << MyPetShop << endl;*/
-
-	cin >> MyPetShop;
-	cout << "*****************" << endl;
-	MyPetShop.CheckInfoShop();
-
-	cout << "*****************" << endl;
-	cout << MyPetShop;
+	cout << endl;
+	 
+	if (MyPetShop == HimPetShop) {
 	
-	/*cout << endl;
-	dog.Play();
-	cout << endl;
-	cat.Play();
-	cout << endl;
-	cout << dog;
-	cout << endl;
-	cout << cat;*/
+		cout << "Yesss!!" << endl;
+	
+	}
+
+	return 0;
 }

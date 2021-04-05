@@ -1,13 +1,10 @@
 #include "Pet.h"
 
-Pet::Pet(const string& name, const string& breed, uint age, const string& species)
+Pet::Pet(const string& name, const string& breed, uint age)
 {
-	assert(age < 30 && "THE AGE IS TOO BIG");
-
 	_name = name;
 	_age = age;
 	_breed = breed;
-	_species = species;
 }
 
 string Pet::GetSpecies() const { return _species; }
@@ -22,6 +19,22 @@ ostream& operator<<(ostream& os, const Pet& pet)
 	return os;
 }
 
+bool operator==(const Pet& pet1, const Pet& pet2)
+{
+	return 
+		(
+			pet1._age == pet2._age &&
+			pet1._name == pet2._name &&
+			pet1._breed == pet2._breed &&
+			pet1._species == pet2._species
+		);
+}
+
+bool operator!=(const Pet& pet1, const Pet& pet2)
+{
+	return !(pet1 == pet2);
+}
+
 void Pet::PrintPet()
 {
 	cout << "Pet name: " << _name << endl;
@@ -29,4 +42,19 @@ void Pet::PrintPet()
 	cout << "Pet breed: " << _breed << endl;
 	cout << "Pet species: " << _species << endl;
 
+}
+
+Pet& Pet::operator=(const Pet& pet)
+{
+	if (this == &pet) {
+
+		return *this;
+	}
+
+	_name = pet._name;
+	_age = pet._age;
+	_breed = pet._breed;
+	_species = pet._species;
+
+	return *this;
 }

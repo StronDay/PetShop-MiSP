@@ -1,7 +1,8 @@
 #include "Dog.h"
 
-Dog::Dog(const string& name, uint age, const string& breed, const string& species) : Pet (name, breed, age, species)
+Dog::Dog(const string& name, uint age, const string& breed) : Pet (name, breed, age)
 {
+	_species = "dog";
 	Say();
 }
 

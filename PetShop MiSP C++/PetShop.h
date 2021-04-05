@@ -16,20 +16,25 @@ private:
 
 	size_t _size;
 	size_t _index;
+	string _name;
 
 public:
 
-	PetShop(size_t size);
+	PetShop(const string& name, size_t size);
+	PetShop(const PetShop& petShop);
 	~PetShop();
 	
 
 	void Put(Pet* pet);
+	void DeletePet(uint index);
 	Pet* Get();
 
-	void CheckInfoShop() const;
+	Pet& operator[](const uint index) const;
+	void operator()() const;
+	PetShop& operator= (const PetShop& shop);
 
-	Pet& operator[] (const int index) const;
-
+	friend bool operator== (const PetShop& shop1, const PetShop& shop2);
+	friend bool operator!= (const PetShop& shop1, const PetShop& shop2);
 	friend ostream& operator<<(ostream& os, const PetShop& petShop);
-	friend std::istream& operator>> (std::istream& in, PetShop& petShop);
+	friend istream& operator>>(istream& in, PetShop& petShop);
 };

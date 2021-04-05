@@ -1,7 +1,8 @@
 #include "Cat.h"
 
-Cat::Cat(const string& name, uint age, const string& breed, const string& species) : Pet(name, breed, age, species)
+Cat::Cat(const string& name, uint age, const string& breed) : Pet(name, breed, age)
 {
+	_species = "cat";
 	Say();
 }
 
