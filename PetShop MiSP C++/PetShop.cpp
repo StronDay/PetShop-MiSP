@@ -15,6 +15,42 @@ PetShop::PetShop(const string& name, size_t size) : _size(size)
 	}
 }
 
+PetShop::PetShop(const string& name)
+{
+	uint species;
+
+	_size = 1 + rand() % 15;
+
+	_pets = new Pet * [_size];
+	if (_pets != NULL) {
+		_index = 1 + rand() % _size;
+
+		_name = name;
+
+		for (uint i = 0; i < _index; i++) {
+
+			species = 1 + rand() % 2;
+
+			if (species == 1) {
+
+				Cat* cat = new Cat();
+				_pets[i] = cat;
+			}
+
+			if (species == 2) {
+
+				Dog* dog = new Dog();
+				_pets[i] = dog;
+			}
+		}
+	}
+	else {
+
+		cout << "No memory allocated (PetShop::PetShop(const string& name, size_t size) : _size(size))" << endl;
+		exit(0);
+	}
+}
+
 PetShop::PetShop(const PetShop& petShop)
 {
 	_size = petShop._size;
@@ -176,16 +212,14 @@ bool operator==(const PetShop& petShop1, const PetShop& petShop2)
 {
 	uint counter = 0;
 
-	PetShop _shop1 = petShop1;
 	PetShop _shop2 = petShop2;
 
-	for (uint i = 0; i < _shop1._index; i++)
+	for (uint i = 0; i < petShop1._index; i++)
 		for (uint j = 0; j < _shop2._index; j++) {
 
-			if (_shop1[i] == _shop2[j]) {
+			if (petShop1[i] == _shop2[j]) {
 
 				counter++;
-
 				_shop2.DeletePet(j);
 				
 				break;

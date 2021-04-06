@@ -3,6 +3,8 @@
 #include <iostream>
 #include <string>
 #include <cassert>
+#include <ctime>
+#include "DataBaseHander.h"
 
 using namespace std;
 
@@ -23,6 +25,7 @@ protected:
 public:
 
 	Pet(const string& name, const string& breed, uint age);
+	Pet();
 
 	virtual	string GetSpecies() const;
 	virtual void PrintPet();

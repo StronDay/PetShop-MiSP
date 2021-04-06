@@ -1,0 +1,40 @@
+1.Afghan Hound
+2.Airedale Terrier
+3.Basenji
+4.Basset Hound
+5.Beagle
+6.Bloodhound
+7.Border Collie
+8.Boxer
+9.Bulldog
+10.Chihuahua
+11.Chow Chow
+12.Cocker Spaniel
+13.Corgi
+14.Dachshund
+15.Dalmatian
+16.Doberman
+17.Fox Terrier
+18.German Shepherd
+19.Golden Retriever
+20.Great Dane
+21.Greyhound
+22.Irish Setter
+23.Labrador
+24.Lhasa Apso
+25.Newfoundland
+26.Pekingese
+27.Pit Bull Terrier
+28.Pointer
+29.Pomeranian
+30.Poodle
+31.Pug
+32.Saint Bernard
+33.Schnauzer
+34.Scottish Terrier
+35.Sheepdog
+36.Shih Tzu
+37.Siberian Husky
+38.Spaniel
+39.Spitz
+40.Yard

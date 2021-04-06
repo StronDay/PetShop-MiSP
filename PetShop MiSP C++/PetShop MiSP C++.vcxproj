@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Cat.cpp" />
+    <ClCompile Include="DataBseHander.cpp" />
     <ClCompile Include="Dog.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Pet.cpp" />
@@ -147,6 +148,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Cat.h" />
+    <ClInclude Include="DataBaseHander.h" />
     <ClInclude Include="Dog.h" />
     <ClInclude Include="Pet.h" />
     <ClInclude Include="PetShop.h" />

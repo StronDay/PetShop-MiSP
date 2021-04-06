@@ -1,0 +1,57 @@
+1.Abyssinian cat
+2.australian mist
+3.Asian
+4.American bobtail
+5.American wirehair
+6.American curl
+7.Balinese
+8.Bengal
+9.Bombay
+10.Brazilian shorthair
+11.British longhair
+12.British shorthair
+13.Burmese
+14.Burmilla
+15.Himalayan
+16.Devon rex
+17.Donskoy cat
+18.European shorthair
+19.Egyptian mau
+20.York chocolate cat
+21.California spangled cat
+22.Kanaani-katze
+23.Cymric cat
+24.Korat
+25.Cornish rex
+26.Kurilian bobtail
+27.Munchkin cat
+28.Maine coon
+29.Manx
+30.Napoleon cat
+31.German rex
+32.Nebelung
+33.Norwegian forest cat
+34.Oriental longhair
+35.Ojos azules
+36.Ocicat
+37.Persian
+38.Peterbald
+39.Pixie-bob
+40.Ragamuffin
+41.Russian blue
+42.Ragdoll
+43.Savannah cat
+44.Birman
+45.Siamese
+46.Siberian
+47.Singapura cat
+48.Scottish fold
+49.Snowshoe
+50.Sokoke
+51.Sphynx
+52.Thai
+53.Toyger
+54.Turkish angora
+55.Chantilly
+56.Chartreux
+57.Yard

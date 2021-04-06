@@ -5,6 +5,8 @@
 #include "Pet.h"
 #include "Dog.h"
 #include "Cat.h"
+#include <ctime>
+#include "DataBaseHander.h"
 
 using namespace std;
 
@@ -21,8 +23,10 @@ private:
 public:
 
 	PetShop(const string& name, size_t size);
-	PetShop(const PetShop& petShop);
+	PetShop(const string& name);
 	~PetShop();
+
+	PetShop(const PetShop& petShop);
 	
 
 	void Put(Pet* pet);

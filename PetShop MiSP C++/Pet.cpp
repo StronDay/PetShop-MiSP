@@ -2,9 +2,18 @@
 
 Pet::Pet(const string& name, const string& breed, uint age)
 {
-	_name = name;
 	_age = age;
+	_name = name;
 	_breed = breed;
+	_species = "pet";
+}
+
+Pet::Pet()
+{
+	_age = 1;
+	_name = "pet";
+	_breed = "pet";
+	_species = "pet";
 }
 
 string Pet::GetSpecies() const { return _species; }

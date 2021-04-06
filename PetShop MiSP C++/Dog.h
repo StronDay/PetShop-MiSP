@@ -11,6 +11,7 @@ protected:
 public:
 
 	Dog(const string& name, uint age, const string& breed);
+	Dog();
 
 	void Play() const override;
 };
