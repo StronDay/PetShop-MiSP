@@ -58,13 +58,9 @@ PetShop::PetShop(const PetShop& petShop)
 	_pets = new Pet * [_size];
 	if (_pets != NULL) {
 
+		memcpy(this->_pets, petShop._pets, petShop._index * sizeof(Pet*));
+
 		_name = petShop._name;
-
-		for (uint i = 0; i < _size; i++) {
-
-			_pets[i] = petShop._pets[i];
-		}
-
 		_index = petShop._index;
 	}
 	else {
@@ -90,12 +86,24 @@ void PetShop::Put(Pet* pet)
 
 void PetShop::DeletePet(uint index)
 {
-	for (uint i = index; i < _index; i++) {
+	if (index == 0 || index > _size) {
 
-		_pets[i] = _pets[i + 1];
+		cout << "ERROR: the index value is too large or too small" << endl;
+		exit(0);
 	}
 
-	_index--;
+	Pet** buff = new Pet * [this->_size];
+
+	memcpy(buff, this->_pets, (index - 1) * sizeof(Pet*));
+	memcpy(&buff[index - 1], &this->_pets[index], (_size - index) * sizeof(Pet*));
+
+	delete[] _pets; 
+	this->_size--;
+
+	_pets = buff;
+
+	this->_index--;
+	_pets[_index] = 0;
 }
 
 Pet* PetShop::Get()
@@ -141,13 +149,9 @@ PetShop& PetShop::operator=(const PetShop& shop)
 		return *this;
 	}
 
+	memcpy(this->_pets, shop._pets, shop._index * sizeof(Pet*));
+
 	_size = shop._size;
-
-	for (uint i = 0; i < _size; i++) {
-	
-		_pets[i] = shop._pets[i];
-	}
-
 	_index = shop._index;
 
 	return *this;
