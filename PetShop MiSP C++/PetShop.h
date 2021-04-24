@@ -23,7 +23,7 @@ private:
 public:
 
 	PetShop(const string& name, size_t size);
-	PetShop(const string& name);
+	PetShop(const string& name, const size_t index, const size_t size);
 	~PetShop();
 
 	PetShop(const PetShop& petShop);
@@ -34,11 +34,11 @@ public:
 	Pet* Get();
 
 	Pet& operator[](const uint index) const;
-	void operator()() const;
 	PetShop& operator= (const PetShop& shop);
+	void operator()() const;
+	bool operator== (const PetShop& shop2);
+	bool operator!= (const PetShop& shop2);
 
-	friend bool operator== (const PetShop& shop1, const PetShop& shop2);
-	friend bool operator!= (const PetShop& shop1, const PetShop& shop2);
 	friend ostream& operator<<(ostream& os, const PetShop& petShop);
-	friend istream& operator>>(istream& in, PetShop& petShop);
+	//friend istream& operator>>(istream& in, PetShop& petShop);
 };

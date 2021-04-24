@@ -42,7 +42,7 @@ string DataBaseHander::RandReadFile(const string& path, const uint maxNumberLine
 		cout << "FILE OPENING ERROR" << endl;
 	}
 
-	uint number = 1 + rand() % maxNumberLine;
+	uint number = 1 + rand() % maxNumberLine; //Rand(1, maxNumberLine);
 	
 	string numberLine;
 	string searchName;

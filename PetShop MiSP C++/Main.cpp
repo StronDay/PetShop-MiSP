@@ -8,11 +8,12 @@ int main()
 {
 	srand(time(NULL));
 
-	PetShop shop("MyZooo");
-	PetShop shop2 = shop;
-
+	PetShop shop("MyZooo" , 4, 8);
+	PetShop shop2("YouZooo", 7, 8);
+	
+	shop = shop2;
 	shop();
-	shop2();
+
 
 	return 0;
 }

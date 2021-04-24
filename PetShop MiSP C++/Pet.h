@@ -7,34 +7,35 @@
 #include "DataBaseHander.h"
 
 using namespace std;
-
-/* Заменяем тип unsigned int на unit */
 typedef unsigned int uint;
 
 class Pet
 {
+private:
+
+	static const string _species;
+
 protected:
 
 	uint _age;
+	string _sex;
 	string _name;
 	string _breed;
-	string _species;
 
 	virtual void Say() const = 0;
 
 public:
-
-	Pet(const string& name, const string& breed, uint age);
+	
+	Pet(const string& name, const string& breed, uint age, const string& sex);
 	Pet();
 
-	virtual	string GetSpecies() const;
-	virtual void PrintPet();
-
+	virtual	const string& GetSpecies() const;
+	
 	virtual void Play() const = 0;
 
 	Pet& operator= (const Pet& pet);
-
-	friend bool operator== (const Pet& pet1, const Pet& pet2);
-	friend bool operator!= (const Pet& pet1, const Pet& pet2);
+	bool operator== (const Pet& pet2);
+	bool operator!= (const Pet& pet2);
+	
 	friend ostream& operator<<(ostream& os, const Pet& pet);
 };

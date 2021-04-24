@@ -1,56 +1,44 @@
 #include "Pet.h"
 
-Pet::Pet(const string& name, const string& breed, uint age)
+const string Pet::_species = "Pet";
+
+Pet::Pet(const string& name, const string& breed, uint age, const string& sex)
+	: _age(age), _name(name), _breed(breed), _sex(sex)
 {
-	_age = age;
-	_name = name;
-	_breed = breed;
-	_species = "pet";
 }
 
-Pet::Pet()
+Pet::Pet() : _age(1), _name("Pet"), _breed("Pet"), _sex("Pet")
 {
-	_age = 1;
-	_name = "pet";
-	_breed = "pet";
-	_species = "pet";
 }
 
-string Pet::GetSpecies() const { return _species; }
+const string& Pet::GetSpecies() const { return _species; }
 
 ostream& operator<<(ostream& os, const Pet& pet)
 {
 	os << "Pet name: " << pet._name << endl;
 	os << "Pet age: " << pet._age << endl;
+	os << "Pet sex: " << pet._sex << endl;
 	os << "Pet breed: " << pet._breed << endl;
-	os << "Pet species: " << pet._species << endl;
+	os << "Pet species: " << pet.GetSpecies() << endl;
 
 	return os;
 }
 
-bool operator==(const Pet& pet1, const Pet& pet2)
+bool Pet::operator==(const Pet& pet2)
 {
 	return 
 		(
-			pet1._age == pet2._age &&
-			pet1._name == pet2._name &&
-			pet1._breed == pet2._breed &&
-			pet1._species == pet2._species
+			_sex == pet2._sex &&
+			_age == pet2._age &&
+			_name == pet2._name &&
+			_breed == pet2._breed &&
+			_species == pet2.GetSpecies()
 		);
 }
 
-bool operator!=(const Pet& pet1, const Pet& pet2)
+bool Pet::operator!=(const Pet& pet2)
 {
-	return !(pet1 == pet2);
-}
-
-void Pet::PrintPet()
-{
-	cout << "Pet name: " << _name << endl;
-	cout << "Pet age: " << _age << endl;
-	cout << "Pet breed: " << _breed << endl;
-	cout << "Pet species: " << _species << endl;
-
+	return !(this == &pet2);
 }
 
 Pet& Pet::operator=(const Pet& pet)
@@ -60,10 +48,10 @@ Pet& Pet::operator=(const Pet& pet)
 		return *this;
 	}
 
-	_name = pet._name;
+	_sex = pet._sex;
 	_age = pet._age;
+	_name = pet._name;
 	_breed = pet._breed;
-	_species = pet._species;
 
 	return *this;
 }
